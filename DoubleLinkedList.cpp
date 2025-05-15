@@ -32,14 +32,13 @@ class Doublelinkedlist{
                 return;
             }
             newNode->next = START;
-
             if(START != NULL){
                 START->prev = newNode;
-
+            }
                 newNode->prev = NULL;
                 START = newNode;
                 return;
-            }
+            
         }
         Node *current = START;
         while(current->next != NULL && current->next->noMhs < nim){
@@ -94,10 +93,10 @@ class Doublelinkedlist{
             }
         }
         delete current;
-        cout << "Record with roll number" << rollNO <<"deleted" << endl;
+        cout << "Record with roll number" << rollNO << "deleted" << endl;
     }
 
-    void transverse(){
+    void trasverse(){
         if(START == NULL){
             cout << "\nList is empty" << endl;
             return;
@@ -182,7 +181,7 @@ int main(){
                 list.hapus();
                 break;
             case 3:
-                list.transverse();
+                list.trasverse();
                 break;
             case 4:
                 list.retraverse();
