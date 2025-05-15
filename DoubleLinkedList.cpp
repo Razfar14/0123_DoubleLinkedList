@@ -59,5 +59,10 @@ class Doublelinkedlist{
             current->next = newNode;
         }
     }
-
+    void hapus(){
+        if(START == NULL){
+            cout << "\nList is empty" << endl;
+            return;
+        }
+    }
 };
