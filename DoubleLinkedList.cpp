@@ -139,8 +139,8 @@ class Doublelinkedlist{
             cout << "\nList is empty" << endl;
             return;
         }
-        cout << "\nEnter the roll number to search : ";
         int rollNO;
+        cout << "\nEnter the roll number to search : ";
         cin >> rollNO;
 
         Node *current = START;
@@ -150,9 +150,51 @@ class Doublelinkedlist{
         }
 
         if(current == NULL){
-            cout << "Record not found" << endl;
-            return;
+            cout << "Record not found" << endl;;
         }
-        cout << "Record found with roll number : " << current->noMhs << endl;
+        else{
+            cout << "\nRecord found" << endl;
+            cout << "Roll number : " << current->noMhs << endl;
+        }
+        
     }
 };
+
+int main(){
+    Doublelinkedlist d;
+    int choice;
+    do{
+        cout << "\n1. Add record" << endl;
+        cout << "2. Delete record" << endl;
+        cout << "3. Display records in ascending order" << endl;
+        cout << "4. Display records in descending order" << endl;
+        cout << "5. Search record" << endl;
+        cout << "6. Exit" << endl;
+        cout << "\nEnter your choice : ";
+        cin >> choice;
+
+        switch(choice){
+            case 1:
+                d.addNode();
+                break;
+            case 2:
+                d.hapus();
+                break;
+            case 3:
+                d.transverse();
+                break;
+            case 4:
+                d.retraverse();
+                break;
+            case 5:
+                d.searchData();
+                break;
+            case 6:
+                cout << "\nExiting..." << endl;
+                break;
+            default:
+                cout << "\nInvalid choice, please try again." << endl;
+        }
+    }while(choice != 6);
+    return 0;
+}
