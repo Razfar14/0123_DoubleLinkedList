@@ -56,8 +56,9 @@ class Doublelinkedlist{
 
         if(current->next != NULL){
             current->next->prev = newNode;
-            current->next = newNode;
         }
+            current->next = newNode;
+        
     }
 
     void hapus(){
@@ -70,5 +71,14 @@ class Doublelinkedlist{
         cin >> rollNO;
 
         Node *current = START;
+
+        while(current != NULL && current->noMhs != rollNO){
+            current = current->next;
+        }
+
+        if(current == NULL){
+            cout << "Record not found" << endl;
+            return;
+        }
     }
 };
