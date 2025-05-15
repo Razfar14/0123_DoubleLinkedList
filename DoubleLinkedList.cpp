@@ -93,5 +93,7 @@ class Doublelinkedlist{
                 current->next->prev = current->prev;
             }
         }
+        delete current;
+        cout << "Record with roll number" << rollNO <<"deleted" << endl;
     }
 };
