@@ -96,4 +96,18 @@ class Doublelinkedlist{
         delete current;
         cout << "Record with roll number" << rollNO <<"deleted" << endl;
     }
+
+    void transverse(){
+        if(START == NULL){
+            cout << "\nList is empty" << endl;
+            return;
+        }
+        Node *currentNode = START;
+        cout << "\nRecord in ascending order of roll number : \n";
+        int i = 0;
+        while(currentNode !=NULL){
+            cout << i+1 << ". " << currentNode->noMhs << "" << endl;
+        }
+       
+    }
 };
