@@ -120,16 +120,39 @@ class Doublelinkedlist{
             return;
         }
         Node *currentNode = START;
+        int i = 0;
         while(currentNode->next != NULL){
             currentNode = currentNode->next;
+            i++;
         }
         cout << "\nRecord in descending order of roll number : \n";
-        int i = 0;
         while(currentNode != NULL){
             cout << i+1 << ". " << currentNode->noMhs << "" << endl;
 
             currentNode = currentNode->prev;
-            i++;
+            i--;
         }
+    }
+
+    void searchData(){
+        if(START == NULL){
+            cout << "\nList is empty" << endl;
+            return;
+        }
+        cout << "\nEnter the roll number to search : ";
+        int rollNO;
+        cin >> rollNO;
+
+        Node *current = START;
+
+        while(current != NULL && current->noMhs != rollNO){
+            current = current->next;
+        }
+
+        if(current == NULL){
+            cout << "Record not found" << endl;
+            return;
+        }
+        cout << "Record found with roll number : " << current->noMhs << endl;
     }
 };
