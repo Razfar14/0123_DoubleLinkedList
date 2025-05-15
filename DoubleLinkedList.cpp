@@ -80,5 +80,9 @@ class Doublelinkedlist{
             cout << "Record not found" << endl;
             return;
         }
+
+        if(current == START){
+            START = current->next;
+        }
     }
 };
